@@ -73,8 +73,8 @@ public class TFMGPipes {
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(axeOrPickaxe())
                     .blockstate(BlockStateGen.encasedPipe())
-                    .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(AllSpriteShifts.COPPER_CASING)))
-                    .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, AllSpriteShifts.COPPER_CASING,
+                    .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(TFMGSpriteShifts.STEEL_CASING)))
+                    .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, TFMGSpriteShifts.STEEL_CASING,
                             (s, f) -> !s.getValue(EncasedSteelPipeBlock.FACING_TO_PROPERTY_MAP.get(f)))))
                     .onRegister(CreateRegistrate.blockModel(() -> SteelPipeAttachmentModel::new))
                     .loot((p, b) -> p.dropOther(b, STEEL_PIPE.get()))
@@ -155,8 +155,8 @@ public class TFMGPipes {
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(axeOrPickaxe())
                     .blockstate(BlockStateGen.encasedPipe())
-                    .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(AllSpriteShifts.COPPER_CASING)))
-                    .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, AllSpriteShifts.COPPER_CASING,
+                    .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(TFMGSpriteShifts.CAST_IRON_BLOCK)))
+                    .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, TFMGSpriteShifts.CAST_IRON_BLOCK,
                             (s, f) -> !s.getValue(EncasedCastIronPipeBlock.FACING_TO_PROPERTY_MAP.get(f)))))
                     .onRegister(CreateRegistrate.blockModel(() -> CastIronPipeAttachmentModel::new))
                     .loot((p, b) -> p.dropOther(b, CAST_IRON_PIPE.get()))
@@ -237,8 +237,8 @@ public class TFMGPipes {
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(axeOrPickaxe())
                     .blockstate(BlockStateGen.encasedPipe())
-                    .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(AllSpriteShifts.COPPER_CASING)))
-                    .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, AllSpriteShifts.COPPER_CASING,
+                    .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(AllSpriteShifts.BRASS_CASING)))
+                    .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, AllSpriteShifts.BRASS_CASING,
                             (s, f) -> !s.getValue(EncasedBrassPipeBlock.FACING_TO_PROPERTY_MAP.get(f)))))
                     .onRegister(CreateRegistrate.blockModel(() -> BrassPipeAttachmentModel::new))
                     .loot((p, b) -> p.dropOther(b, BRASS_PIPE.get()))
