@@ -24,6 +24,7 @@ import com.drmangotea.createindustry.blocks.pipes.pumps.TFMGPumpBlock;
 import com.drmangotea.createindustry.blocks.pipes.smart_pipes.TFMGSmartFluidPipeBlock;
 import com.drmangotea.createindustry.blocks.pipes.valves.TFMGFluidValveBlock;
 import com.drmangotea.createindustry.registry.TFMGCreativeModeTabs;
+import com.drmangotea.tfmg.registry.TFMGBlocks;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllSpriteShifts;
 import com.simibubi.create.content.decoration.encasing.EncasedCTBehaviour;
@@ -67,7 +68,7 @@ public class TFMGPipes {
             .register();
 
     public static final BlockEntry<EncasedSteelPipeBlock> COPPER_ENCASED_STEEL_PIPE =
-            REGISTRATE.block("copper_encased_steel_pipe", p -> new EncasedSteelPipeBlock(p, AllBlocks.COPPER_CASING::get))
+            REGISTRATE.block("copper_encased_steel_pipe", p -> new EncasedSteelPipeBlock(p, TFMGBlocks.STEEL_CASING::get))
                     .initialProperties(SharedProperties::copperMetal)
                     .properties(p -> p.color(MaterialColor.TERRACOTTA_LIGHT_GRAY))
                     .properties(BlockBehaviour.Properties::noOcclusion)
@@ -149,7 +150,7 @@ public class TFMGPipes {
             .register();
 
     public static final BlockEntry<EncasedCastIronPipeBlock> COPPER_ENCASED_CAST_IRON_PIPE =
-            REGISTRATE.block("copper_encased_cast_iron_pipe", p -> new EncasedCastIronPipeBlock(p, AllBlocks.COPPER_CASING::get))
+            REGISTRATE.block("copper_encased_cast_iron_pipe", p -> new EncasedCastIronPipeBlock(p, TFMGBlocks.CAST_IRON_BLOCK))
                     .initialProperties(SharedProperties::copperMetal)
                     .properties(p -> p.color(MaterialColor.TERRACOTTA_LIGHT_GRAY))
                     .properties(BlockBehaviour.Properties::noOcclusion)
@@ -231,7 +232,7 @@ public class TFMGPipes {
             .register();
 
     public static final BlockEntry<EncasedBrassPipeBlock> COPPER_ENCASED_BRASS_PIPE =
-            REGISTRATE.block("copper_encased_brass_pipe", p -> new EncasedBrassPipeBlock(p, AllBlocks.COPPER_CASING::get))
+            REGISTRATE.block("copper_encased_brass_pipe", p -> new EncasedBrassPipeBlock(p, AllBlocks.BRASS_CASING::get))
                     .initialProperties(SharedProperties::copperMetal)
                     .properties(p -> p.color(MaterialColor.TERRACOTTA_LIGHT_GRAY))
                     .properties(BlockBehaviour.Properties::noOcclusion)
@@ -313,14 +314,14 @@ public class TFMGPipes {
             .register();
 
     public static final BlockEntry<EncasedPlasticPipeBlock> COPPER_ENCASED_PLASTIC_PIPE =
-            REGISTRATE.block("copper_encased_plastic_pipe", p -> new EncasedPlasticPipeBlock(p, AllBlocks.COPPER_CASING::get))
+            REGISTRATE.block("copper_encased_plastic_pipe", p -> new EncasedPlasticPipeBlock(p, TFMGBlocks.PLASTIC_BLOCK::get))
                     .initialProperties(SharedProperties::copperMetal)
                     .properties(p -> p.color(MaterialColor.TERRACOTTA_LIGHT_GRAY))
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(axeOrPickaxe())
                     .blockstate(BlockStateGen.encasedPipe())
-                    .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(AllSpriteShifts.COPPER_CASING)))
-                    .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, AllSpriteShifts.COPPER_CASING,
+                    .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(TFMGSpriteShifts.ALUMINUM_SCAFFOLD_TOP)))
+                    .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, TFMGSpriteShifts.ALUMINUM_SCAFFOLD_TOP,
                             (s, f) -> !s.getValue(EncasedPlasticPipeBlock.FACING_TO_PROPERTY_MAP.get(f)))))
                     .onRegister(CreateRegistrate.blockModel(() -> PlasticPipeAttachmentModel::new))
                     .loot((p, b) -> p.dropOther(b, PLASTIC_PIPE.get()))
@@ -395,14 +396,14 @@ public class TFMGPipes {
             .register();
 
     public static final BlockEntry<EncasedAluminumPipeBlock> COPPER_ENCASED_ALUMINUM_PIPE =
-            REGISTRATE.block("copper_encased_aluminum_pipe", p -> new EncasedAluminumPipeBlock(p, AllBlocks.COPPER_CASING::get))
+            REGISTRATE.block("copper_encased_aluminum_pipe", p -> new EncasedAluminumPipeBlock(p, TFMGBlocks.ALUMINUM_BLOCK::get))
                     .initialProperties(SharedProperties::copperMetal)
                     .properties(p -> p.color(MaterialColor.TERRACOTTA_LIGHT_GRAY))
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(axeOrPickaxe())
                     .blockstate(BlockStateGen.encasedPipe())
-                    .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(AllSpriteShifts.COPPER_CASING)))
-                    .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, AllSpriteShifts.COPPER_CASING,
+                    .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(TFMGSpriteShifts.ALUMINUM_SCAFFOLD_TOP)))
+                    .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, TFMGSpriteShifts.ALUMINUM_SCAFFOLD_TOP,
                             (s, f) -> !s.getValue(EncasedAluminumPipeBlock.FACING_TO_PROPERTY_MAP.get(f)))))
                     .onRegister(CreateRegistrate.blockModel(() -> AluminumPipeAttachmentModel::new))
                     .loot((p, b) -> p.dropOther(b, ALUMINUM_PIPE.get()))
